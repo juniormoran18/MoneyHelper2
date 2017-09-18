@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MoneyHelper</string>
+
+    <string-array name="cuentas">
+        <item>Seleccione el tipo de cuenta</item>
+        <item>Tarjeta de Credito</item>
+        <item>Ahorro</item>
+        <item>Efectivo</item>
+    </string-array>
+
+</resources>
