@@ -67,17 +67,18 @@ public class RegisterActivity extends AppCompatActivity {
 
         //Pasar a nuestro MainActivity nuestros Saldos Totales
 
-        Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-        intent.putExtra("dato", ahorroSaldo);
-        intent.putExtra("dato1", creditoSaldo);
-        intent.putExtra("dato2", efectivoSaldo);
-        startActivity(intent);
+        // Ya no es necesario, basta con guardar nuestro nuevo registro de operación en el
+        // repository solo cerramos este activity con 'finish()' para volver al MainActivity
+//        Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+//        intent.putExtra("dato", ahorroSaldo);
+//        intent.putExtra("dato1", creditoSaldo);
+//        intent.putExtra("dato2", efectivoSaldo);
+//        startActivity(intent);
 
 
         //Guardar datos en un array
         Operation operacion = new Operation( Double.parseDouble(m),t ,c);
-        OpeRepo opeRepo = OpeRepo.getInstance();
-        opeRepo.agregarOpe(operacion);
+        OpeRepo.agregarOpe(operacion);
 
         finish();
 

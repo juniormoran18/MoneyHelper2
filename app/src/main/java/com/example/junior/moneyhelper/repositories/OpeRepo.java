@@ -11,23 +11,13 @@ import java.util.List;
 
 public class OpeRepo {
 
-    private static OpeRepo _INSTANCE = null;
-
-    private OpeRepo(){}
-
-    public static OpeRepo getInstance(){
-        if(_INSTANCE == null)
-            _INSTANCE = new OpeRepo();
-        return _INSTANCE;
-    }
-
-    public static List<Operation> operaciones = new ArrayList<>();
+    private static List<Operation> operaciones = new ArrayList<>();
 
     public  static List<Operation> getOperaciones() {
         return operaciones;
     }
 
-    public void agregarOpe(Operation operacion){
-        this.operaciones.add(operacion);
+    public static void agregarOpe(Operation operacion){
+        operaciones.add(operacion);
     }
 }

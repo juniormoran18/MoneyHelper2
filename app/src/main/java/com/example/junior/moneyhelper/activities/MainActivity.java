@@ -3,6 +3,7 @@ package com.example.junior.moneyhelper.activities;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -37,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
         txt2 = (TextView) findViewById(R.id.efectivotxt);
         txt3 = (TextView) findViewById(R.id.creditotxt);
 
-        OpeRepo opR = OpeRepo.getInstance();
-        List <Operation> operations = opR.getOperaciones();
+        List <Operation> operations = OpeRepo.getOperaciones();
+        Log.d("MainActivity", String.valueOf(operations));
 
         double cont = 0;
         double ahorroSaldo = 0;
@@ -87,6 +88,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void addItem(View view){
         Intent intent = new Intent(MainActivity.this,RegisterActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent, 100);
     }
 }
